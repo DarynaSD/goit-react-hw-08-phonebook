@@ -1,8 +1,8 @@
-export const INITAL = {
-  contacts: {
-    items: [],
-    isLoading: false,
-    error: null
-  },
-  filter: ""
-}
+export const initialState = {
+  user: { name: null, email: null },
+  token: null,
+  isLoggedIn: false,
+  isRefreshing: false,
+  error: null,
+  isLoading: false,
+};

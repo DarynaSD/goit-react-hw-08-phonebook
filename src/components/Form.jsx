@@ -4,15 +4,15 @@ import { InputLabelWrapper, Input, Button } from './styled/Parts.styled';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectorContacts } from 'redux/selectors';
-import { addContact } from 'redux/thunks';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContacts } from 'redux/contacts/thunks';
 
 const Form = () => {
   const [contactName, setContactName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(selectorContacts);
+  const contacts = useSelector(selectContacts);
 
   //
   const createContact = (contactName, number) => {
@@ -27,7 +27,7 @@ const Form = () => {
       number,
     };
 
-    dispatch(addContact(newContact));
+    dispatch(addContacts(newContact));
   };
 
   //change

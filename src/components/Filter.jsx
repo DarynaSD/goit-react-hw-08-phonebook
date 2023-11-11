@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Input, InputLabelWrapper} from './styled/Parts.styled'
 import { useDispatch } from 'react-redux';
-import { filterContact } from 'redux/filterSlice';
+import { changeFilter } from 'redux/filter/filterSlice';
 
 
 const Filter = () => {
@@ -11,7 +11,7 @@ const Filter = () => {
   const handleChangeFilter = ({ target: { value } }) => {
     //console.log('filter', value);
     const valueToDispatch = value.trim().toLowerCase();
-    dispatch(filterContact(valueToDispatch));
+    dispatch(changeFilter(valueToDispatch));
     //console.log('valueToDispatch', valueToDispatch);
   };
 

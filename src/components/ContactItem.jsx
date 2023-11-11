@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ContactName, ContactNumber, DeleteBtn } from './styled/Parts.styled';
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'redux/thunks';
+import { deleteContacts } from 'redux/contacts/thunks';
 
 
 const ContactItem = ({ item }) => {
@@ -10,7 +10,7 @@ const ContactItem = ({ item }) => {
   const dispatch = useDispatch();
   // delete
   const handleDelete = itemId => {
-    dispatch(removeContact(itemId));
+    dispatch(deleteContacts(itemId));
   };
 
   return (

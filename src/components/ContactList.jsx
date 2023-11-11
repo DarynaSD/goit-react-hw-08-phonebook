@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import ContactItem from './ContactItem';
 import { List } from './styled/Parts.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectorVisible } from 'redux/selectors';
-import { fetchContacts } from 'redux/thunks';
-
+import { useSelector } from 'react-redux';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
 
 const ContactList = () => {
-  const filtered = useSelector(selectorVisible);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  const filtered = useSelector(selectVisibleContacts);
 
   return (
     <div>
