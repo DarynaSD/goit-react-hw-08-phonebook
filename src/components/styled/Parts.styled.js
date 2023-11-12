@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const aditionalColor = '#fcb577 ';
@@ -109,4 +110,64 @@ export const DeleteBtn = styled('button')({
     backgroundColor: '#965821',
     }
 })
+
+//nav
+export const MenuLink = styled(Link)({
+    width: 90,
+    height: 30,
+    transition: 'boxShadow, easy, 300ms; backgroundColor, easy, 300ms',
+    cursor: 'pointer',
+    borderRadius: 10,
+    border: `0.5px solid ${aditionalColor}`,
+    backgroundColor: aditionalColor,
+    padding: '15px 10px',
+    margin: '0px 25px 25px 0px',
+    textDecoration: 'none',
+    color: '#090909',
+
+    '&:hover, &:focus': {
+        boxShadow: `0px 10px 30px 0px ${shadowColor}`,
+        backgroundColor: '#e89e5d',
+    },
+
+    '&:active': {
+    backgroundColor: '#965821',
+    }
+})
+
+export const AuthLink = styled(Link)({
+    width: 90,
+    height: 30,
+    transition: 'boxShadow, easy, 300ms; backgroundColor, easy, 300ms',
+    cursor: 'pointer',
+    borderRadius: 10,
+    border: `1px solid ${aditionalColor}`,
+    backgroundColor: "#ffffff",
+    padding: '15px 10px',
+    margin: '0px 25px 25px 0px',
+    textDecoration: 'none',
+    color: '#090909',
+
+    '&:hover, &:focus': {
+        boxShadow: `0px 10px 30px 0px ${shadowColor}`,
+        backgroundColor: '#e89e5d',
+    },
+
+    '&:active': {
+    backgroundColor: '#965821',
+    }
+})
+
+export const Header = styled('header')({
+    display: 'flex',
+    justifyContent: 'space-between',
+})
+
+export const LogoutWrap = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginTop: -30,
+})
+
 

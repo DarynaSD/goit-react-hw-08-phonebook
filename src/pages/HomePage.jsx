@@ -1,8 +1,11 @@
+import { useAuth } from "hooks/useAuth";
 
 export default function Home() {
+
+  const { isLoggedIn } = useAuth();
   return (
     <>
-      <div>Welcome to Phonebook!</div>
+      {!isLoggedIn && <div>Welcome to Phonebook!</div>}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/thunks';
+import { Button, Input, InputLabelWrapper } from './styled/Parts.styled';
 
 
 export const RegisterForm = () => {
@@ -21,37 +22,44 @@ export const RegisterForm = () => {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input
+      <InputLabelWrapper>
+        <label htmlFor="username">Username</label>
+        <Input
           type="text"
           name="name"
           placeholder="Enter your name"
           title="Enter your name"
           required
+          id="username"
         />
-      </label>
-      <label>
-        Email
-        <input
+      </InputLabelWrapper>
+
+      <InputLabelWrapper>
+        <label htmlFor="email">Email</label>
+        <Input
           type="email"
           name="email"
           placeholder="Enter your email"
+          //pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           title="Enter your email"
           required
+          id="email"
         />
-      </label>
-      <label>
-        Password
-        <input
+      </InputLabelWrapper>
+
+      <InputLabelWrapper>
+        <label htmlFor="password">Password</label>
+        <Input
           type="password"
           name="password"
           placeholder="Enter your password"
+          //pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
           title="Enter your password"
           required
+          id="password"
         />
-      </label>
-      <button type="submit">Register</button>
+      </InputLabelWrapper>
+      <Button type="submit">Register</Button>
     </form>
   );
 };
