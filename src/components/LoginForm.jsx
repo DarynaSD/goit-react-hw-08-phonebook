@@ -6,15 +6,15 @@ export const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const currentForm = e.currentTarget;
 
     dispatch(
       logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        email: currentForm.elements.email.value,
+        password: currentForm.elements.password.value,
       })
     );
-    form.reset();
+    currentForm.reset();
   };
 
   return (
