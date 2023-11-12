@@ -15,7 +15,7 @@ const ContactItem = ({ item }) => {
 
   return (
     <li style={{ marginBottom: 20 }}>
-      <ContactName>{item.contactName}</ContactName>
+      <ContactName>{item.name}</ContactName>
       <ContactNumber>{item.number}</ContactNumber>
       <DeleteBtn type="button" onClick={() => handleDelete(item.id)}>
         ✖ Delete

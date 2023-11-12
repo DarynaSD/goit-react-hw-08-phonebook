@@ -1,4 +1,4 @@
-import { nanoid } from '@reduxjs/toolkit';
+//import { nanoid } from '@reduxjs/toolkit';
 import { InputLabelWrapper, Input, Button } from './styled/Parts.styled';
 
 import React from 'react';
@@ -8,26 +8,26 @@ import { selectContacts } from 'redux/contacts/selectors';
 import { addContacts } from 'redux/contacts/thunks';
 
 const Form = () => {
-  const [contactName, setContactName] = useState('');
+  const [name, setContactName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
   //
-  const createContact = (contactName, number) => {
+  const createContact = (name, number) => {
     const alreadyExist = contacts.find(
-      item => item.contactName === contactName
+      item => item.contactName === name
     );
-    if (alreadyExist) return alert(`Contact '${contactName}' already exist`);
+    if (alreadyExist) return alert(`Contact '${name}' already exist`);
 
-    const newContact = {
-      id: nanoid(),
-      contactName,
-      number,
-    };
+    // const newContact = {
+    //   id: nanoid(),
+    //   contactName,
+    //   number,
+    // };
 
-    dispatch(addContacts(newContact));
+    dispatch(addContacts({ name, number }));
   };
 
   //change
@@ -39,7 +39,7 @@ const Form = () => {
   //submit
   const handleSubmit = e => {
     e.preventDefault();
-    createContact(contactName, number);
+    createContact(name, number);
 
     setContactName('');
     setNumber('');
@@ -56,7 +56,7 @@ const Form = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           id="nameInput"
-          value={contactName}
+          value={name}
           onChange={handleChange}
           autoFocus
         />

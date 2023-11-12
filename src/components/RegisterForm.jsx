@@ -1,21 +1,22 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/thunks';
 
+
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
-    const form = event.currentTarget;
+    const currentForm = event.currentTarget;
 
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name: currentForm.elements.name.value,
+        email: currentForm.elements.email.value,
+        password: currentForm.elements.password.value,
       })
     );
-    form.reset(); 
+    currentForm.reset(); 
   };
 
   return (

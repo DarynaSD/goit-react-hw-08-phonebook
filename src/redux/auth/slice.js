@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from 'redux/auth/thunks';
 import { initialState } from 'redux/initialState';
 
-
 const authSlice = createSlice({
   name: 'auth',
   initialState,
